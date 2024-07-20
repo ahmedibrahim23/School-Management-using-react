@@ -1,11 +1,16 @@
 import { useState } from 'react'
+import'./index.css'
+import Sidebar from './components/sidebar/Sidebar'
+import Admin from './dashBoards/Admin'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>hell school</div>
+    <div className=" flex">
+      <Admin/>
+     <Sidebar/>
+    </div>
   )
 }
 
