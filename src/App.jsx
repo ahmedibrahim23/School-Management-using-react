@@ -10,6 +10,8 @@ import StudentDetail from './components/student/StudentDetail'
 import TeacherDatail from './components/teacher/TeacherDatail'
 import TeacherForm from './components/teacher/TeacherForm'
 import TeacherList from './components/teacher/TeacherList'
+import ClassList from './components/class/ClassList'
+import SubjectList from './components/subject/SubjectList'
 
 
 function App() {
@@ -18,10 +20,12 @@ function App() {
     <div className=" flex">
       {/* <Admin/> */}
       {/* <ClassForm/> */}
+      <ClassList/>
       {/* <SubjectForm/> */}
+      {/* <SubjectList/> */}
       {/* <StudentForm/> */}
       {/* <StudentList/> */}
-      <StudentDetail/>
+      {/* <StudentDetail/> */}
       {/* <TeacherDatail/> */}
       {/* <TeacherForm/> */}
       {/* <TeacherList/> */}
