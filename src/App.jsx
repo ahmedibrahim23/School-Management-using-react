@@ -20,14 +20,14 @@ function App() {
     <div className=" flex">
       {/* <Admin/> */}
       {/* <ClassForm/> */}
-      <ClassList/>
+      {/* <ClassList/> */}
       {/* <SubjectForm/> */}
       {/* <SubjectList/> */}
       {/* <StudentForm/> */}
       {/* <StudentList/> */}
       {/* <StudentDetail/> */}
       {/* <TeacherDatail/> */}
-      {/* <TeacherForm/> */}
+      <TeacherForm/>
       {/* <TeacherList/> */}
      {/* <Sidebar/> */}
     </div>
