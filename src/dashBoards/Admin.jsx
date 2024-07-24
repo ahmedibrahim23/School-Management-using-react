@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
+import axios from 'axios';
+import Sidebar from '../components/sidebar/Sidebar'
 
 const Admin = () => {
   return (
     <div className='w-full' >
-       <Navbar />
+      <h3>hello</h3>
+
       
     </div>
   )
