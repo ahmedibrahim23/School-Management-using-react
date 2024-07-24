@@ -1,5 +1,5 @@
-import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const StudentForm = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 flex justify-center items-center w-full p-4">
