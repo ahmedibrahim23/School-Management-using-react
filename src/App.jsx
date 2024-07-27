@@ -17,9 +17,9 @@ import SubjectList from './components/subject/SubjectList'
 function App() {
   return (
     <div className=" flex">
-      {/* <Admin/> */}
+      <Admin/>
       {/* <ClassForm/> */}
-      <ClassList/>
+      {/* <ClassList/> */}
       {/* <SubjectForm/> */}
       {/* <SubjectList/> */}
       {/* <StudentForm/> */}
