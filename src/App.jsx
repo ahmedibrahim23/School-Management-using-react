@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import'./index.css'
-import Sidebar from './components/sidebar/Sidebar'
-import Admin from './dashBoards/Admin'
-import ClassForm from './components/class/ClassForm'
-import SubjectForm from './components/subject/SubjectForm'
-import StudentForm from './components/student/StudentForm'
-import StudentList from './components/student/StudentList'
-import StudentDetail from './components/student/StudentDetail'
-import TeacherDatail from './components/teacher/TeacherDatail'
-import TeacherForm from './components/teacher/TeacherForm'
-import TeacherList from './components/teacher/TeacherList'
-import ClassList from './components/class/ClassList'
-import SubjectList from './components/subject/SubjectList'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TeacherList from './components/teacher/TeacherList';
+import TeacherForm from './components/teacher/TeacherForm';
+import TeacherDetail from './components/teacher/TeacherDatail';
+import EditTeacherForm from './components/teacher/EditTeacherForm';
+import StudentList from './components/student/StudentList';
+import ClassList from './components/class/ClassList';
+import SubjectList from './components/subject/SubjectList';
+import Sidebar from './components/sidebar/Sidebar';
 
 
 function App() {
   return (
-    <div className=" flex">
-      <Admin/>
-      {/* <ClassForm/> */}
-      {/* <ClassList/> */}
-      {/* <SubjectForm/> */}
-      {/* <SubjectList/> */}
-      {/* <StudentForm/> */}
-      {/* <StudentList/> */}
-      {/* <StudentDetail/> */}
-      {/* <TeacherDatail/> */}
-      {/* <TeacherForm/> */}
-      {/* <TeacherList/> */}
-     {/* <Sidebar/> */}
+    <div className="flex">
+      <Router>
+        <Sidebar />
+        <div className="flex-1 p-4 transition-all duration-300">
+          <Routes>
+            <Route path="/teachers" element={<TeacherList />} />
+            <Route path="/addteacher/new" element={<TeacherForm />} />
+            <Route path="/details/:id" element={<TeacherDetail />} />
+            <Route path="/editteacher/:id" element={<EditTeacherForm />} />
+            {/* Add routes for Student, Class, Subject, Reports, etc. */}
+            <Route path="/students" element={<StudentList/>} />
+            <Route path="/classes" element={<ClassList/>} />
+            <Route path="/subjects" element={<SubjectList/>} />
+            <Route path="/reports" element={<div>Reports Component</div>} />
+            <Route path="/logout" element={<div>Logout Component</div>} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   )
 }
