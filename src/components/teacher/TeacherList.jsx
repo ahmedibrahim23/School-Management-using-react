@@ -26,7 +26,7 @@ const TeacherList = () => {
         <div className="bg-white p-4 rounded-md shadow-md">
           <h2 className="mb-4 text-xl font-bold text-gray-800">Teacher List</h2>
           <div className="mb-4">
-            <Link to="/addteacher"
+            <Link to="/teachers/new"
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
             >
               Add Teacher
@@ -53,7 +53,7 @@ const TeacherList = () => {
                     <td className="py-2 px-4 border-b text-xs sm:text-sm">
                       <Link
                         to={`/details/${teacher.id}`}
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
+                        className="bg-blue-5s00 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
                       >
                         Details
                       </Link>
