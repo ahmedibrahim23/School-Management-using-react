@@ -1,31 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ClassForm from './components/class/ClassForm';
-import SubjectForm from './components/subject/SubjectForm';
-import StudentForm from './components/student/StudentForm';
-import TeacherForm from './components/teacher/TeacherForm';
-import Admin from './dashBoards/Admin';
-import Sidebar from './components/sidebar/Sidebar';
-import './global.css';
+import { useState } from 'react'
+import'./index.css'
+import Sidebar from './components/sidebar/Sidebar'
+import Admin from './dashBoards/Admin'
+import ClassForm from './components/class/ClassForm'
+import SubjectForm from './components/subject/SubjectForm'
+import StudentForm from './components/student/StudentForm'
+import StudentList from './components/student/StudentList'
+import StudentDetail from './components/student/StudentDetail'
+import TeacherDatail from './components/teacher/TeacherDatail'
+import TeacherForm from './components/teacher/TeacherForm'
+import TeacherList from './components/teacher/TeacherList'
+import ClassList from './components/class/ClassList'
+import SubjectList from './components/subject/SubjectList'
+
 
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        <Sidebar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/home" element={<Admin/>} />
-            <Route path="/student" element={<StudentForm />} />
-            <Route path="/teacher" element={<TeacherForm />} />
-            <Route path="/class" element={<ClassForm />} />
-            <Route path="/subject" element={<SubjectForm />} />
-            {/* <Route path="/report" element={<GenerateReports />} /> */}
-          </Routes>
-        </div>
-      </div>
-    </Router>
-  );
+    <div className=" flex">
+      {/* <Admin/> */}
+      {/* <ClassForm/> */}
+      <ClassList/>
+      {/* <SubjectForm/> */}
+      {/* <SubjectList/> */}
+      {/* <StudentForm/> */}
+      {/* <StudentList/> */}
+      {/* <StudentDetail/> */}
+      {/* <TeacherDatail/> */}
+      {/* <TeacherForm/> */}
+      {/* <TeacherList/> */}
+     {/* <Sidebar/> */}
+    </div>
+  )
 }
 
 export default App;

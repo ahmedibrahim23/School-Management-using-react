@@ -1,15 +1,11 @@
 import React from 'react'
+import Navbar from '../components/navbar/Navbar'
 
 const Admin = () => {
   return (
-    <div>
-      <h2>Dashboard Overview</h2>
-      {/* Display statistics here */}
-      <div>
-        <h3>Students: {/* student count */}</h3>
-        <h3>Teachers: {/* teacher count */}</h3>
-        <h3>Classes: {/* class count */}</h3>
-      </div>
+    <div className='w-full' >
+       <Navbar />
+      
     </div>
   )
 }

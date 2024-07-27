@@ -1,9 +1,14 @@
 import React from 'react'
 import { FaChalkboardTeacher, FaHome, FaPoll, FaUniversity } from 'react-icons/fa'
 import { FaBook, FaHouse, FaPersonCircleCheck, FaPersonMilitaryPointing, FaUserLock } from 'react-icons/fa6'
-import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className='w-64 bg-gray-800 fixed h-full px-4 py-2'>
 
@@ -13,25 +18,23 @@ const Sidebar = () => {
         <hr />
         <ul className='mt-3 text-white font-bold'>
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
-            <Link to="/"><FaHome className='inline-block w-6 h-6 mr-2 -mt-2'></FaHome>
-            Home
-            </Link> 
+                <a href="" className='px-3'>
+                    <FaHome className='inline-block w-6 h-6 mr-2 -mt-2'></FaHome>
+                    Home
+                </a>
             </li> <br />
 
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
-
-            <Link to="/teacher"> 
-             <FaChalkboardTeacher className='inline-block w-6 h-6 mr-2 -mt-2'></FaChalkboardTeacher>
-            Teacher
-            </Link>    
+                <a href="" className='px-3'>
+                    <FaChalkboardTeacher className='inline-block w-6 h-6 mr-2 -mt-2'></FaChalkboardTeacher>
+                    Teacher
+                </a>
             </li><br />
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
-                
-            <Link to="/student" >
-            <FaPersonCircleCheck className='inline-block w-6 h-6 mr-2 -mt-2'></FaPersonCircleCheck>
-            Student
-            </Link>
-                
+                <a href="" className='px-3'>
+                    <FaPersonCircleCheck className='inline-block w-6 h-6 mr-2 -mt-2'></FaPersonCircleCheck>
+                    Student
+                </a>
             </li><br />
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
                 <a href="" className='px-3'>
@@ -40,15 +43,16 @@ const Sidebar = () => {
                 </a>
             </li><br />
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
-                
-            <Link to="/subject"><FaBook className='inline-block w-6 h-6 mr-2 -mt-2'></FaBook>
-            Subjects
-            </Link>
-                
+                <a href="" className='px-3'>
+                    <FaBook className='inline-block w-6 h-6 mr-2 -mt-2'></FaBook>
+                    Subject
+                </a>
             </li><br />
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
-            <Link to="/report"><FaPoll className='inline-block w-6 h-6 mr-2 -mt-2'></FaPoll>
-            Reports</Link>
+                <a href="" className='px-3'>
+                    <FaPoll className='inline-block w-6 h-6 mr-2 -mt-2'></FaPoll>
+                    Reports
+                </a>
             </li>
             <br />
             <li className='mb-2 rounded hover:shadow hover:bg-blue-500 py-2 mt-6'>
@@ -60,19 +64,7 @@ const Sidebar = () => {
 
         </ul>
     </div>
-    // <div className="sidebar">
-    //   <h2>Admin Dashboard</h2>
-    //   <ul>
-    //     <li><Link to="/">Dashboard</Link></li>
-    //     <li><Link to="/student">Manage Students</Link></li>
-    //     <li><Link to="/teacher">Manage Teachers</Link></li>
-    //     <li><Link to="/class">Manage Classes</Link></li>
-    //     <li><Link to="/subject">Manage Subjects</Link></li>
-    //     {/* <li><Link to="/report">Generate Reports</Link></li> */}
-    //   </ul>
-    // </div>
   )
 }
 
-export default Sidebar
-
+export default Sidebar;

@@ -1,133 +1,107 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
-const TeacherDatail = () => {
-    const teachers = [
-        {
-          id: '1',
-          name: 'John Doe',
-          email: 'johndoe@gmail.com',
-          phone: '123-456-7890',
-          gender: 'Male',
-          address: '123 Main St',
-          password: 'password123',
-          class: 'Form 1',
-          subject: 'biology',
-          date: '28/12/2021'
-        },
-        // Add more teacher objects as needed
-      ];
+const TeacherDetail = () => {
+  const { id } = useParams();
+  const [teacher, setTeacher] = useState(null);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    loadTeacher();
+  }, []);
+
+  const loadTeacher = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/api/teachers/${id}`);
+      setTeacher(response.data);
+    } catch (error) {
+      console.error("Error fetching teacher:", error);
+      setError(error.response ? error.response.data : "Server Error");
+    }
+  };
+
+  const deleteTeacher = async () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this teacher?");
+    if (confirmDelete) {
+      try {
+        await axios.delete(`http://localhost:8080/api/teachers/delete/${id}`);
+        navigate('/');
+      } catch (error) {
+        console.error("Error deleting teacher:", error);
+        setError(error.response ? error.response.data : "Server Error");
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 w-full p-4">
-
-    <div className="p-4">
-    <div className="bg-white p-4 rounded-md shadow-md">
-        <div className="flex flex-col lg:flex-row justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-gray-800 mb-2 lg:mb-0">Teacher List</h2>
-          
-        </div>
-        <div className="overflow-x-auto lg:overflow-x-hidden">
-          {/* For larger screens, show the table */}
-          <div className="hidden lg:block">
-            <table className="min-w-full bg-white border border-gray-200 rounded-md">
-              <thead className="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-bold">
-              <tr>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">ID</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Name</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Email</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Phone</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Gender</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Address</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Password</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Class</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Subject</th>
-                <th className="py-2 px-4 border-b text-left text-xs sm:text-sm">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {teachers.map((teacher) => (
-                <tr key={teacher.id} className="text-sm font-normal border-t">
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.id}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.name}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.email}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.phone}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.gender}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.address}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.password}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.class}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm">{teacher.subject}</td>
-                  <td className="py-2 px-4 border-b text-xs sm:text-sm flex space-x-2">
-                    <button
-                      className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
-                      type="button"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
-                      type="button"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-        </table>
-        </div>
-          {/* For mobile screens, show vertical card layout */}
-          <div className="block lg:hidden">
-          {teachers.map((teacher) => (
-            <div key={teacher.id} className="mb-4 bg-white border border-gray-200 rounded-md p-4 shadow-md">
-
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="font-semibold text-gray-700">ID:</div>
-                    <div>{teacher.id}</div>
-                    <div className="font-semibold text-gray-700">Name:</div>
-                    <div>{teacher.name}</div>
-                    <div className="font-semibold text-gray-700">Email:</div>
-                    <div>{teacher.email}</div>
-
-                    <div className="font-semibold text-gray-700">Phone:</div>
-                    <div>{teacher.phone}</div>
-
-                    <div className="font-semibold text-gray-700">Gender:</div>
-                    <div>{teacher.gender}</div>
-
-                    <div className="font-semibold text-gray-700">Address:</div>
-                    <div>{teacher.address}</div>
-
-                    <div className="font-semibold text-gray-700">Password:</div>
-                    <div>{teacher.password}</div>
-
-                    <div className="font-semibold text-gray-700">Class:</div>
-                    <div>{teacher.class}</div>
-
-                    <div className="font-semibold text-gray-700">Subject:</div>
-                    <div>{teacher.subject}</div>
-                </div>
-                <div className="flex gap-2 mt-4">
-                  <button
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs transition duration-300 w-full"
-                    type="button"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md text-xs transition duration-300 w-full"
-                    type="button"
-                  >
-                    Delete
-                  </button>
-                </div>
+    <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 p-4'>
+      <div className="bg-white p-6 rounded-md shadow-md max-w-4xl mx-auto">
+        {error && <div className="alert alert-danger">{error}</div>}
+        {teacher ? (
+          <div>
+            <h2 className="mb-6 text-2xl font-bold text-gray-800">Teacher Information</h2>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border border-gray-200 rounded-md">
+                <tbody>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Full Name</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.fullName}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Email</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.email}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Phone</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.phone}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Date of Birth</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.dateOfBirth}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Hire Date</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.hireDate}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Age</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.age}</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Password</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">********</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="py-2 px-4 border-b text-left text-sm font-semibold text-gray-700">Address</td>
+                    <td className="py-2 px-4 border-b text-left text-sm">{teacher.address}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-          ))}
+            <div className="mt-4 flex space-x-2">
+              <Link
+                to={`/editteacher/${id}`}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-sm transition duration-300"
+              >
+                Edit
+              </Link>
+              <button
+                onClick={deleteTeacher}
+                className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md text-sm transition duration-300"
+                type="button"
+              >
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
-        </div>
-        </div>
-        </div>
-  )
-}
+        ) : (
+          <div>Loading...</div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-export default TeacherDatail
+export default TeacherDetail;
