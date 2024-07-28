@@ -32,7 +32,7 @@ const StudentForm = () => {
             return null; // Filter out any malformed class objects
           }
         }).filter(cls => cls !== null); // Remove null entries
-        setClasses(classList);
+        setstdClasses(classList);
       } else {
         console.error("Unexpected response format: ", response.data);
       }
