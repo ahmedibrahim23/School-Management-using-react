@@ -11,6 +11,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import ClassForm from './components/class/ClassForm';
 import Navbar from './components/navbar/Navbar';
 import StudentForm from './components/student/StudentForm';
+import StudentDetail from './components/student/StudentDetail';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             {/* Add routes for Student, Class, Subject, Reports, etc. */}
             <Route path="/students" element={<StudentList/>} />
             <Route path="/students/new" element={<StudentForm/>}/>
+            <Route path='/students/details' element={<StudentDetail/>}/>
             <Route path="/classes" element={<ClassList/>} />
             <Route path="/classes/new" element={<ClassForm/>} />
             <Route path="/subjects" element={<SubjectList/>} />

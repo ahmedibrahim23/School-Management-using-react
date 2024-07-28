@@ -62,12 +62,12 @@ const StudentList = () => {
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.email}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.password}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">
-                    <button
+                    <Link to='/students/details'
                       className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs md:text-sm transition duration-300"
                       type="button"
                     >
                       View Details
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

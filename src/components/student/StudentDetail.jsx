@@ -1,22 +1,39 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 const StudentDetail = () => {
-    const students = [
-        {
-          id: '1',
-          name: 'John Doe',
-          email: 'johndoe@gmail.com',
-          phone: '123-456-7890',
-          parentName: 'Jane Doe',
-          parentPhone: '098-765-4321',
-          dob: '01/01/2000',
-          password: 'password123',
-          className: '10A'
-        },
-        // Add more student objects as needed
+    const {id}= useParams();
+    const[student, setStudent] = useState(null);
+    const[error,setError] = useState(null);
+    const navigate =useNavigate();
+    useEffect(()=>{
+      loadStudents
+    } ,[]);
+    const loadStudents = async()=>{
+      try {
+        const response = await axios.get("http://localhost:8080/api/students/${id}");
+        setStudent(response.data);
         
-    
-      ];
+      } catch (error) {
+        console.error("error fetching students", error)
+        setError(error.response? error.response.data: "server error")
+        
+      }
+    };
+    const deleteStudent= async()=>{
+      const confirmDelete= window.confirm("are you sure to delete this student");
+      if(confirmDelete){
+        try {
+          await axios.delete("http://localhost:8080/api/students/delete/${id}");
+          navigate('/students');
+          
+        } catch (error) {
+          console.error("error fetching students", error)
+        setError(error.response? error.response.data: "server error")
+          
+        }
+      }
+    };
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 w-full p-4">
 
