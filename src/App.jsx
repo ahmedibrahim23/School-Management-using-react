@@ -12,6 +12,7 @@ import ClassForm from './components/class/ClassForm';
 import Navbar from './components/navbar/Navbar';
 import StudentForm from './components/student/StudentForm';
 import StudentDetail from './components/student/StudentDetail';
+import EditStudentForm from './components/student/EditStudentForm';
 
 
 function App() {
@@ -24,12 +25,13 @@ function App() {
             <Route path="/" element={<Navbar/>}/>
             <Route path="/teachers" element={<TeacherList />} />
             <Route path="/teachers/new" element={<TeacherForm />} />
-            {/* <Route path="/details/:id" element={<TeacherDetail />} /> */}
+            {<Route path="/details/:id" element={<TeacherDetail />} /> }
             <Route path="/editteacher/:id" element={<EditTeacherForm />} />
             {/* Add routes for Student, Class, Subject, Reports, etc. */}
             <Route path="/students" element={<StudentList/>} />
             <Route path="/students/new" element={<StudentForm/>}/>
             <Route path='/stdDetails/:id' element={<StudentDetail/>}/>
+            <Route path='/editstudent/:id' element={<EditStudentForm/>}/>
             <Route path="/classes" element={<ClassList/>} />
             <Route path="/classes/new" element={<ClassForm/>} />
             <Route path="/subjects" element={<SubjectList/>} />

@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -84,12 +84,12 @@ const StudentDetail = () => {
                                         <td className="py-2 px-4 border-b text-xs sm:text-sm">{student.parentnumber}</td>
                                         <td className="py-2 px-4 border-b text-xs sm:text-sm">{student.stdClass.id}</td>
                                         <td className="py-2 px-4 border-b text-xs sm:text-sm flex space-x-2">
-                                            <button
+                                            <Link to={`/editstudent/${id}`}
                                                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
                                                 type="button"
                                             >
                                                 Edit
-                                            </button>
+                                            </Link>
                                             <button
                                                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
                                                 type="button"
