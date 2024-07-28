@@ -112,12 +112,12 @@ const ClassList = () => {
             />
             <FaSearch className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
           </div>
-          <button
+          <Link to='/classes/new'
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm md:text-base transition duration-300"
             type="button"
           >
             Add Classes
-          </button>
+          </Link>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 rounded-md">
