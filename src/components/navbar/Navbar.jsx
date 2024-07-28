@@ -1,17 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 const Navbar = () => {
   return (
-    <div>
-    <h2>Dashboard Overview</h2>
-    {/* Display statistics here */}
-    <div>
-      <h3>Students: {/* student count */}</h3>
-      <h3>Teachers: {/* teacher count */}</h3>
-      <h3>Classes: {/* class count */}</h3>
+    <div className="bg-gradient-to-tr from-blue-800 to-cyan-600 text-white font-bold  p-4 flex justify-between items-center shadow-lg">
+      <div className="text-2xl font-semibold">Admin Dashboard</div>
+      <div>
+        <button className="bg-white text-teal-600 px-4 py-2 rounded-md shadow">Profile</button>
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
