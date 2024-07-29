@@ -1,8 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-<<<<<<< HEAD
-import Admin from './dashBoards/Admin';
-=======
 import TeacherList from './components/teacher/TeacherList';
 import TeacherForm from './components/teacher/TeacherForm';
 import TeacherDetail from './components/teacher/TeacherDatail';
@@ -16,18 +13,16 @@ import Navbar from './components/navbar/Navbar';
 import StudentForm from './components/student/StudentForm';
 import StudentDetail from './components/student/StudentDetail';
 import EditStudentForm from './components/student/EditStudentForm';
-import TeacherSidebar from './components/sidebar/TeacherSidebar';
->>>>>>> 087657eec26c4c9371542e9e6e11a5ff78dfd3d6
+import GradeManagement from './components/exam/GradeManagement';
+import GradeEntryForm from './components/exam/GradeEntryForm';
+import EditGradeForm from './components/exam/EditGradeForm';
+
 
 
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      <Admin/>
-=======
-    <div className="flex flex-col min-h-screen">
+     <div className="flex flex-col min-h-screen">
       <Router>
         <Navbar />   
         <div className="flex flex-grow">
@@ -49,14 +44,18 @@ function App() {
             <Route path="/classes" element={<ClassList/>} />
             <Route path="/classes/new" element={<ClassForm/>} />
             <Route path="/subjects" element={<SubjectList/>} />
-            <Route path="/reports" element={<div>Reports Component</div>} />
+            <Route path="/reports" element={<GradeManagement/>} />
+            <Route path="/reports/new" element={<GradeEntryForm/>}/>
+            <Route path="/editgrade/:id" element={<EditGradeForm/>}/>
             <Route path="/logout" element={<div>Logout Component</div>} />
+            
+
           </Routes>
         </div>
         </div>
       </Router>
->>>>>>> 087657eec26c4c9371542e9e6e11a5ff78dfd3d6
     </div>
+    
   )
 }
 

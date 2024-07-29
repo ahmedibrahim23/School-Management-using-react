@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-const GradeEntryForm = ({ onGradeSubmitted }) => {
+function EditGradeForm() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [grade, setGrade] = useState({
     student: { id: '' },
@@ -12,30 +13,43 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
 
   const [students, setStudents] = useState([]);
   const [subjects, setSubjects] = useState([]);
+  const [error, setError] = useState('');
 
-  // Fetch students and subjects on component mount
   useEffect(() => {
-    const fetchStudents = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/api/students');
-        setStudents(response.data);
-      } catch (error) {
-        console.error('Error fetching students:', error);
-      }
-    };
-
-    const fetchSubjects = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/api/subjects');
-        setSubjects(response.data);
-      } catch (error) {
-        console.error('Error fetching subjects:', error);
-      }
-    };
-
-    fetchStudents();
-    fetchSubjects();
+    loadStudents();
+    loadSubjects();
+    loadExam();
   }, []);
+
+  const loadStudents = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/students');
+      setStudents(response.data);
+    } catch (error) {
+      console.error("Error fetching students:", error);
+      setError('Error fetching students');
+    }
+  };
+
+  const loadSubjects = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/subjects');
+      setSubjects(response.data);
+    } catch (error) {
+      console.error("Error fetching subjects:", error);
+      setError('Error fetching subjects');
+    }
+  };
+
+  const loadExam = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/api/exams/${id}`);
+      setGrade(response.data);
+    } catch (error) {
+      console.error("Error fetching exam:", error);
+      setError('Error fetching exam');
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,27 +71,23 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/exams/new', grade);
-      console.log('Submitted Grade Data:', response.data);
-      if (onGradeSubmitted) onGradeSubmitted();
-      setGrade({
-        student: { id: '' },
-        subject: { id: '' },
-        marks: ''
-      });
-      navigate('/reports'); // Navigate to the desired route
+      await axios.put(`http://localhost:8080/api/exams/edit/${id}`, grade);
+      alert("Exam updated successfully");
+      navigate("/reports");
     } catch (error) {
-      console.error('Error submitting grades:', error);
+      console.error("There was an error updating the exam!", error);
+      setError('There was an error updating the exam');
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center w-full p-4">
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
-        <h1 className="text-center text-2xl font-semibold text-gray-800 mb-6">Grade Entry</h1>
+        <h1 className="text-center text-2xl font-semibold text-gray-800 mb-6">Edit Grade</h1>
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <div className="mb-6">
           <label className="block mb-2 text-gray-700 font-semibold" htmlFor="student">Student</label>
           <select 
@@ -127,11 +137,11 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-md text-lg hover:bg-blue-700 transition duration-300"
         >
-          Submit Grades
+          Update Grade
         </button>
       </form>
     </div>
   );
-};
+}
 
-export default GradeEntryForm;
+export default EditGradeForm;
