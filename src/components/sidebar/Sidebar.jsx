@@ -74,7 +74,7 @@ const Sidebar = () => {
         </button>
     </div>
     <nav className="space-y-4">
-        <Link to="/" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
+        <Link to="/teachers" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
         <FaChalkboardTeacher size={20} />
         <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Teacher</span>
         </Link>
@@ -93,6 +93,14 @@ const Sidebar = () => {
         <Link to="/reports" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
         <FaClipboardList size={20} />
         <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Reports</span>
+        </Link>
+        <Link to="/attendance" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
+        <FaClipboardList size={20} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Attendance</span>
+        </Link>
+        <Link to="/fee" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
+        <FaClipboardList size={20} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Fee</span>
         </Link>
         <Link to="/logout" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
         <FaSignOutAlt size={20} />
