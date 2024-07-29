@@ -11,6 +11,7 @@ const StudentForm = () => {
   "phone": '',
   "email": '',
   "password": '',
+  "role": '',
   "parentname": '',
   "parentnumber": '',
   "stdClass": {
@@ -84,6 +85,15 @@ const StudentForm = () => {
         <label className="block mb-1 text-gray-600 font-semibold" htmlFor="password">Password</label>
         <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="password" id="password" name="password" placeholder="********" value={student.password} onChange={handlechange} />
       </div>
+      <div className="flex flex-col">
+          <label className="block mb-1 text-gray-600 font-semibold" htmlFor="Role">ROLES</label>
+          <select className="bg-indigo-50 px-4 py-2 outline-none rounded-md" id="role" name="role" value={student.role} onChange={onInputChange} required>
+              <option value="" disabled>Select Role</option>
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+        </div>
       <div className="flex flex-col">
         <label className="block mb-1 text-gray-600 font-semibold" htmlFor="gender">Gender</label>
         <select className="bg-indigo-50 px-4 py-2 outline-none rounded-md" id="gender" name="gender" value={student.gender} onChange={handlechange}>
