@@ -68,7 +68,7 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
         subject: { id: '' },
         marks: ''
       });
-      navigate('/reports'); // Navigate to the desired route
+      navigate('/grades'); // Navigate to the desired route
     } catch (error) {
       console.error('Error submitting grades:', error);
     }
