@@ -27,7 +27,7 @@ const StudentList = () => {
         <h2 className="mb-4 text-xl font-bold text-gray-800">Student List</h2>
         
         <div className="mb-4">
-          < Link to='/AddStudent'
+          < Link to='/students/new'
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
             type="button"
           >

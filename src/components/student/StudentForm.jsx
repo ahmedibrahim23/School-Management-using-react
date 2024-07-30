@@ -87,7 +87,7 @@ const StudentForm = () => {
       </div>
       <div className="flex flex-col">
           <label className="block mb-1 text-gray-600 font-semibold" htmlFor="Role">ROLES</label>
-          <select className="bg-indigo-50 px-4 py-2 outline-none rounded-md" id="role" name="role" value={student.role} onChange={onInputChange} required>
+          <select className="bg-indigo-50 px-4 py-2 outline-none rounded-md" id="role" name="role" value={student.role} onChange={handlechange} required>
               <option value="" disabled>Select Role</option>
               <option value="teacher">Teacher</option>
               <option value="student">Student</option>
