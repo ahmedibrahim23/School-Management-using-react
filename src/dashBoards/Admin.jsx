@@ -24,6 +24,10 @@ import AttendanceForm from '../components/attendance/AttendanceForm';
 import GradeManagement from '../components/exam/GradeManagement';
 import GradeEntryForm from '../components/exam/GradeEntryForm';
 import EditGradeForm from '../components/exam/EditGradeForm';
+import SubjectForm from '../components/subject/SubjectForm';
+import FeeForm from '../components/fee/FeeForm';
+import FeeList from '../components/fee/FeeList';
+import AttendanceRecord from '../components/attendance/AttendanceRecord';
 
 const Admin = () => {
   return (
@@ -49,10 +53,14 @@ const Admin = () => {
           <Route path="/classes" element={<ClassList/>} />
           <Route path="/classes/new" element={<ClassForm/>} />
           <Route path="/subjects" element={<SubjectList/>} />
-          <Route path="/attendance" element={<AttendanceForm/>} />
+          <Route path="/subjects/new" element={<SubjectForm/>} />
+          <Route path='/attendance' element={<AttendanceForm/>}/>
+          
           <Route path="/grades" element={<GradeManagement/>} />
           <Route path='/grades/new' element={<GradeEntryForm/>}/>
           <Route path='/grades/:id' element={<EditGradeForm/>}/>
+          <Route path='/fee' element={<FeeList/>}/>
+          <Route path='/fee/new' element={<FeeForm/>}/>
           <Route path="/reports" element={<div>Reports Component</div>} />
           <Route path="/logout" element={<div>Logout Component</div>} />
         </Routes>

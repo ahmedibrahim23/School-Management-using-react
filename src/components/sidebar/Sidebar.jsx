@@ -42,6 +42,10 @@ const Sidebar = () => {
           <FaClipboardList size={34} />
           <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Record Attendance</span>
         </Link>
+        <Link to="/fee" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+          <FaClipboardList size={34} />
+          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Fee</span>
+        </Link>
         <Link to="/grades" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
           <FaGraduationCap size={34} />
           <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Manage Grades</span>

@@ -6,9 +6,7 @@ import LoginPage from './components/login page/LoginPage';
 const App = () => {
   return (
     <div>
-      {/* { <TeacherDashboard/> } */}
-      {/* <LoginPage/> */}
-      <Admin/>
+        <Admin/>
     </div>
   )
 }
