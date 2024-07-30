@@ -6,6 +6,7 @@ import TeacherSidebar from '../components/sidebar/TeacherSidebar';
 import GradeManagement from '../components/exam/GradeManagement'
 import GradeEntryForm from '../components/exam/GradeEntryForm'
 import EditGradeForm from '../components/exam/EditGradeForm'
+import AttendanceForm from '../components/attendance/AttendanceForm';
 const TeacherDashboard = () => {
   return (
     <Router>
@@ -17,7 +18,7 @@ const TeacherDashboard = () => {
             <Routes>
               <Route path="/dashboard" element={<div>Dashboard</div>} />
               <Route path="/timetables" element={<div>Class Timetables</div>} />
-              <Route path="/attendance" element={<div>Record Attendance</div>} />
+              <Route path="/attendance" element={<AttendanceForm/>} />
               <Route path="/grades" element={<GradeManagement/>} />
               <Route path='/grades/new' element={<GradeEntryForm/>}/>
               <Route path='/grades/:id' element={<EditGradeForm/>}/>

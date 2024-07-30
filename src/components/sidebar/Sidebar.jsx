@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars, FaChalkboardTeacher, FaClipboardList, FaSchool, FaSignOutAlt, FaTimes, FaUserGraduate, FaBook } from 'react-icons/fa';
+import { FaBars, FaChalkboardTeacher, FaClipboardList, FaSchool, FaSignOutAlt, FaTimes, FaUserGraduate, FaBook, FaGraduationCap } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -37,6 +37,18 @@ const Sidebar = () => {
         <Link to="/subjects" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
           <FaBook size={34} />
           <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Subject</span>
+        </Link>
+        <Link to="/attendance" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+          <FaClipboardList size={34} />
+          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Record Attendance</span>
+        </Link>
+        <Link to="/fee" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+          <FaClipboardList size={34} />
+          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Fee</span>
+        </Link>
+        <Link to="/grades" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+          <FaGraduationCap size={34} />
+          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Manage Grades</span>
         </Link>
         <Link to="/reports" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
         <FaClipboardList size={34} />

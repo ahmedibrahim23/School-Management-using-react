@@ -41,12 +41,8 @@ const StudentList = () => {
               <tr>
                 <th className="py-2 px-4 border-b text-left text-xs md:text-sm">ID</th>
                 <th className="py-2 px-4 border-b text-left text-xs md:text-sm">Names</th>
-                <th className="py-2 px-4 border-b text-left text-xs md:text-sm">DateOfBirth</th>
-                <th className="py-2 px-4 border-b text-left text-xs md:text-sm">gender</th>
-                <th className="py-2 px-4 border-b text-left text-xs md:text-sm">Addrss</th>
                 <th className="py-2 px-4 border-b text-left text-xs md:text-sm">Phone</th>
                 <th className="py-2 px-4 border-b text-left text-xs md:text-sm">email</th>
-                <th className="py-2 px-4 border-b text-left text-xs md:text-sm">password</th>
                 <th className="py-2 px-4 border-b text-left text-xs md:text-sm">Actions</th>
               </tr>
             </thead>
@@ -55,12 +51,8 @@ const StudentList = () => {
                 <tr key={student.id} className="text-sm font-normal border-t">
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.id}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.fullname}</td>
-                  <td className="py-2 px-4 border-b text-xs md:text-sm">{student.dateOfBirth}</td>
-                  <td className="py-2 px-4 border-b text-xs md:text-sm">{student.gender}</td>
-                  <td className="py-2 px-4 border-b text-xs md:text-sm">{student.address}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.phone}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">{student.email}</td>
-                  <td className="py-2 px-4 border-b text-xs md:text-sm">{student.password}</td>
                   <td className="py-2 px-4 border-b text-xs md:text-sm">
                     <Link to={`/stdDetails/${student.id}`}
                       className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs md:text-sm transition duration-300"
