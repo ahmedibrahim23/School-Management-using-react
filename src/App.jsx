@@ -6,9 +6,12 @@ import TeacherDashboard from './dashBoards/TeacherDashboard'
 const App = () => {
   return (
     <div>
-      {/* <TeacherDashboard/> */}
-      <LoginPage/>
+
+
+      { <TeacherDashboard/> }
+      {/* <LoginPage/> */}
       {/* <Admin/> */}
+
     </div>
   )
 }
