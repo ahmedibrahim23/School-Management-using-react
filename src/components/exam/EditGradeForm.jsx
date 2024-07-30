@@ -76,7 +76,7 @@ function EditGradeForm() {
     try {
       await axios.put(`http://localhost:8080/api/exams/edit/${id}`, grade);
       alert("Exam updated successfully");
-      navigate("/reports");
+      navigate("/grades");
     } catch (error) {
       console.error("There was an error updating the exam!", error);
       setError('There was an error updating the exam');

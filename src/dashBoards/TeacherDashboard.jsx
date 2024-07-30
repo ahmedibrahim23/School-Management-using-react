@@ -3,7 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TeacherNav from '../components/navbar/TeacherNav';
 import TeacherSidebar from '../components/sidebar/TeacherSidebar';
-
+import GradeManagement from '../components/exam/GradeManagement'
+import GradeEntryForm from '../components/exam/GradeEntryForm'
+import EditGradeForm from '../components/exam/EditGradeForm'
 const TeacherDashboard = () => {
   return (
     <Router>
@@ -16,7 +18,9 @@ const TeacherDashboard = () => {
               <Route path="/dashboard" element={<div>Dashboard</div>} />
               <Route path="/timetables" element={<div>Class Timetables</div>} />
               <Route path="/attendance" element={<div>Record Attendance</div>} />
-              <Route path="/grades" element={<div>Record Attendance</div>} />
+              <Route path="/grades" element={<GradeManagement/>} />
+              <Route path='/grades/new' element={<GradeEntryForm/>}/>
+              <Route path='/grades/:id' element={<EditGradeForm/>}/>
               <Route path="/announcements" element={<div>Announcements</div>} />
               <Route path="/profiles" element={<div>Teacher Profiles</div>} />
             </Routes>
