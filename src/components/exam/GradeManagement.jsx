@@ -63,7 +63,7 @@ const GradeManagement = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Link to="/reports/new"
+            <Link to='/grades/new' 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
             >
               Add Grade
@@ -89,7 +89,7 @@ const GradeManagement = () => {
                       <td className="py-2 px-4 border-b text-xs sm:text-sm">{grade.subject_id}</td>
                       <td className="py-2 px-4 border-b text-xs sm:text-sm">{grade.stdMarks}</td>
                       <td className="py-2 px-4 border-b text-xs sm:text-sm flex space-x-2">
-                        <Link to={`/editgrade/${grade.id}`}
+                        <Link to={`/grades/${grade.id}`}
                           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs transition duration-300"
                         >
                           Update
