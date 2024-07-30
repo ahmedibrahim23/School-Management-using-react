@@ -53,7 +53,7 @@ const TeacherList = () => {
                     <td className="py-2 px-4 border-b text-xs sm:text-sm">
                       <Link
                         to={`/details/${teacher.id}`}
-                        className="bg-blue-5s00 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-xs sm:text-sm transition duration-300"
                       >
                         Details
                       </Link>

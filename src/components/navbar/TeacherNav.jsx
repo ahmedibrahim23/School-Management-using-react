@@ -11,4 +11,4 @@ const TeacherNav = () => {
   )
 }
 
-export default TeacherNav
+export default TeacherNav;
