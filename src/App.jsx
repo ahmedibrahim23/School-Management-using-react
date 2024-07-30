@@ -16,9 +16,6 @@ import EditStudentForm from './components/student/EditStudentForm';
 import GradeManagement from './components/exam/GradeManagement';
 import GradeEntryForm from './components/exam/GradeEntryForm';
 import EditGradeForm from './components/exam/EditGradeForm';
-import TeacherSidebar from './components/sidebar/TeacherSidebar';
-
-
 
 function App() {
   return (

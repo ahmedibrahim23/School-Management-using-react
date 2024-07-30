@@ -30,7 +30,7 @@ const GradeManagement = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this exam?");
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:8080/api/exams/${id}`);
+        await axios.delete(`http://localhost:8080/api/exams/delete/${id}`);
         setGrades(grades.filter(grade => grade.id !== id));
         setError(null); // Clear previous errors if successful
       } catch (error) {
