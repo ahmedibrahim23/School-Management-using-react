@@ -17,9 +17,13 @@ const Sidebar = () => {
           {isOpen ? <FaTimes size={34} /> : <FaBars size={34} />}
         </button>
     </div>
-    <nav className="space-y-4">
-        <Link to="/" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
-        <FaChalkboardTeacher size={20} />
+    <nav className="mt-8 space-y-10">
+      <Link to="/dashboard" className="flex items-center space-x-2 hover:bg-teal-600 p-2 rounded">
+        <FaSchool size={34} />
+        <span className={`${isOpen? 'inline' : 'hidden'} ml-2`}>Dashboard</span>
+      </Link>
+        <Link to="/teachers" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
+        <FaChalkboardTeacher size={34} />
         <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Teacher</span>
         </Link>
         <Link to="/students" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
@@ -35,7 +39,7 @@ const Sidebar = () => {
           <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Subject</span>
         </Link>
         <Link to="/reports" className="flex items-center space-x-2 hover:bg-indigo-600 p-2 rounded">
-        <FaClipboardList size={20} />
+        <FaClipboardList size={34} />
         <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Reports</span>
         </Link>
         <Link to="/logout" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
