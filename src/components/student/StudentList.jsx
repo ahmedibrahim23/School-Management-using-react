@@ -19,7 +19,7 @@ const StudentList = () => {
 
   const loadStudents = async () => {
     try {
-      const response = await axios.get("https://backend-school-d129ad763199.herokuapp.com/api/students");
+      const response = await axios.get("https://backend-school-6fb386e3d920.herokuapp.com/api/students");
       setStudents(response.data);
       setFilteredStudents(response.data);
     } catch (error) {
@@ -29,10 +29,16 @@ const StudentList = () => {
   };
 
   const filterStudents = (term) => {
-    const filtered = students.filter(student =>
-      student.fullname.toLowerCase().includes(term.toLowerCase()) ||
-      student.email.toLowerCase().includes(term.toLowerCase())
-    );
+    if (!term) {
+      setFilteredStudents(students);
+      return;
+    }
+
+    const filtered = students.filter(student => {
+      const fullName = student.fullName ? student.fullName.toLowerCase() : '';
+      const email = student.email ? student.email.toLowerCase() : '';
+      return fullName.includes(term.toLowerCase()) || email.includes(term.toLowerCase());
+    });
     setFilteredStudents(filtered);
   };
 
@@ -80,7 +86,7 @@ const StudentList = () => {
                 {filteredStudents.map((student) => (
                   <tr key={student.id} className="text-sm font-normal border-t">
                     <td className="py-2 px-4 border-b text-xs md:text-sm">{student.id}</td>
-                    <td className="py-2 px-4 border-b text-xs md:text-sm">{student.fullname}</td>
+                    <td className="py-2 px-4 border-b text-xs md:text-sm">{student.fullName || 'N/A'}</td>
                     <td className="py-2 px-4 border-b text-xs md:text-sm">{student.phone}</td>
                     <td className="py-2 px-4 border-b text-xs md:text-sm">{student.email}</td>
                     <td className="py-2 px-4 border-b text-xs md:text-sm">

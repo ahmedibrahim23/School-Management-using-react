@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 const StudentForm = () => {
   let navigate =useNavigate();
   const [student,setStudent]= useState({
-    "fullname": '',
+    "fullName": '',
   "dateOfBirth": '',
   "gender": '',
   "address": '',
@@ -12,15 +12,15 @@ const StudentForm = () => {
   "email": '',
   "password": '',
   "role": '',
-  "parentname": '',
-  "parentnumber": '',
+  "parentName": '',
+  "parentNumber": '',
   "stdClass": {
     "id": ''
   }
   });
   const [stdClasses,setstdClasses ] = useState([])
   useEffect(()=>{
-    axios.get("https://backend-school-d129ad763199.herokuapp.com/api/class")
+    axios.get("https://backend-school-6fb386e3d920.herokuapp.com/api/class")
     .then(response => {
       console.log("API Response: ", response.data); // Log the entire response for debugging
       if (Array.isArray(response.data)) {
@@ -56,7 +56,7 @@ const StudentForm = () => {
   };
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("https://backend-school-d129ad763199.herokuapp.com/api/students/new" ,student)
+    axios.post("https://backend-school-6fb386e3d920.herokuapp.com/api/students/new" ,student)
     .then(Response=>{
       navigate('/admin-dashboard/students');
     })
@@ -71,7 +71,7 @@ const StudentForm = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="flex flex-col">
         <label className="block mb-1 text-gray-600 font-semibold" htmlFor="fullname">Fullname</label>
-        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="text" id="fullname" name="fullname" placeholder="Fullname" value={student.fullname} onChange={handlechange} />
+        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="text" id="fullName" name="fullName" placeholder="Fullname" value={student.fullName} onChange={handlechange} />
       </div>
       <div className="flex flex-col">
         <label className="block mb-1 text-gray-600 font-semibold" htmlFor="dateOfBirth">Date of Birth</label>
@@ -121,12 +121,12 @@ const StudentForm = () => {
         </select>
       </div>
       <div className="flex flex-col">
-        <label className="block mb-1 text-gray-600 font-semibold" htmlFor="parentname">Parent Name</label>
-        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="text" id="parentname" name="parentname" placeholder="Parent Name" value={student.parentname} onChange={handlechange} />
+        <label className="block mb-1 text-gray-600 font-semibold" htmlFor="parentName">Parent Name</label>
+        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="text" id="parentName" name="parentName" placeholder="Parent Name" value={student.parentName} onChange={handlechange} />
       </div>
       <div className="flex flex-col">
-        <label className="block mb-1 text-gray-600 font-semibold" htmlFor="parentnumber">Parent Number</label>
-        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="tel" id="parentnumber" name="parentnumber" placeholder="Parent Number" value={student.parentnumber} onChange={handlechange} />
+        <label className="block mb-1 text-gray-600 font-semibold" htmlFor="parentNumber">Parent Number</label>
+        <input className="bg-indigo-50 px-4 py-2 outline-none rounded-md" type="tel" id="parentNumber" name="parentNumber" placeholder="Parent Number" value={student.parentNumber} onChange={handlechange} />
       </div>
     </div>
     <button className="mt-4 w-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-indigo-100 py-2 rounded-md text-lg tracking-wide">

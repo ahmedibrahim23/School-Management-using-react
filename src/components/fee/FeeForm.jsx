@@ -9,7 +9,7 @@ const FeeForm = () => {
 
   useEffect(() => {
     // Fetch the list of students from the backend
-    axios.get('https://backend-school-d129ad763199.herokuapp.com/api/students')
+    axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/students')
       .then(response => {
         setStudents(response.data);
       })
@@ -27,7 +27,7 @@ const FeeForm = () => {
       status
     };
 
-    axios.post('https://backend-school-cbcfe8928e29.herokuapp.com/api/fees/new', null, { params: feeData })
+    axios.post('https://backend-school-6fb386e3d920.herokuapp.com/api/fees/new', null, { params: feeData })
       .then(response => {
         console.log('Fee created successfully:', response.data);
         // Reset form fields

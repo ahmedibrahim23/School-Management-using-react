@@ -17,7 +17,7 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get('https://backend-school-cbcfe8928e29.herokuapp.com/api/students');
+        const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/students');
         setStudents(response.data);
       } catch (error) {
         console.error('Error fetching students:', error);
@@ -26,7 +26,7 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
 
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('https://backend-school-cbcfe8928e29.herokuapp.com/api/subjects');
+        const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/subjects');
         setSubjects(response.data);
       } catch (error) {
         console.error('Error fetching subjects:', error);
@@ -60,7 +60,7 @@ const GradeEntryForm = ({ onGradeSubmitted }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://backend-school-cbcfe8928e29.herokuapp.com/api/exams/new', grade);
+      const response = await axios.post('https://backend-school-6fb386e3d920.herokuapp.com/api/exams/new', grade);
       console.log('Submitted Grade Data:', response.data);
       if (onGradeSubmitted) onGradeSubmitted();
       setGrade({

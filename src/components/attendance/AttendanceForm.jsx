@@ -12,7 +12,7 @@ function AttendanceForm() {
 
   useEffect(() => {
     // Fetch classes when component mounts
-    axios.get('https://backend-school-d129ad763199.herokuapp.com/api/class')
+    axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/class')
       .then(response => setClasses(response.data))
       .catch(error => console.error('Error fetching classes:', error));
   }, []);
@@ -24,7 +24,7 @@ function AttendanceForm() {
 
   const fetchStudents = (classId) => {
     // Fetch students of the selected class
-    axios.get(`https://backend-school-d129ad763199.herokuapp.com/api/attendances/classes/${classId}/students`)
+    axios.get(`https://backend-school-6fb386e3d920.herokuapp.com/api/attendances/classes/${classId}/students`)
       .then(response => {
         setStudents(response.data);
         initializeAttendance(response.data);
@@ -50,7 +50,7 @@ function AttendanceForm() {
 
   const handleSubmit = () => {
     const attendanceRequests = attendance.map(record => 
-      axios.post('https://backend-school-d129ad763199.herokuapp.com/api/attendances/mark', null, {
+      axios.post('https://backend-school-6fb386e3d920.herokuapp.com/api/attendances/mark', null, {
         params: {
           studentId: record.studentId,
           classId: selectedClassId,

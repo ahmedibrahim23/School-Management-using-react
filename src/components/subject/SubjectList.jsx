@@ -14,7 +14,7 @@ const SubjectList = () => {
 
     const fetchSubject = async () => {
         try {
-            const response = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/subjects');
+            const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/subjects');
             console.log(response.data);  // Log the response data to check its structure
             setSubjects(response.data);
         } catch (error) {

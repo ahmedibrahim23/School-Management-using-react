@@ -15,7 +15,7 @@ const ClassList = () => {
 
     const fetchClasses = async () => {
         try {
-            const response = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/class');
+            const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/class');
             console.log(response.data);  // Log the response data to check its structure
             setClasses(response.data);
         } catch (error) {
