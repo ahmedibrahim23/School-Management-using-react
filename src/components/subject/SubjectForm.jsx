@@ -10,7 +10,7 @@ const SubjectForm = () => {
 
   useEffect(() => {
       // Fetch teachers from the backend
-      axios.get('http://localhost:8080/api/teachers')
+      axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teachers')
           .then(response => {
               setTeachers(response.data);
           })
@@ -27,7 +27,7 @@ const SubjectForm = () => {
           teacherId: selectedTeacher
       };
 
-      axios.post('http://localhost:8080/api/subjects/new', newSubject)
+      axios.post('https://backend-school-d129ad763199.herokuapp.com/api/subjects/new', newSubject)
           .then(response => {
               console.log('Subject created successfully:', response.data);
               // Handle success (e.g., clear form, show success message, navigate to another page)

@@ -15,7 +15,7 @@ const TeacherDetils = () => {
   
     const loadTeacher = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/teachers/${id}`);
+        const response = await axios.get(`https://backend-school-d129ad763199.herokuapp.com/api/teachers/${id}`);
         setTeacher(response.data);
       } catch (error) {
         console.error("Error fetching teacher:", error);
@@ -27,7 +27,7 @@ const TeacherDetils = () => {
       const confirmDelete = window.confirm("Are you sure you want to delete this teacher?");
       if (confirmDelete) {
         try {
-          await axios.delete(`http://localhost:8080/api/teachers/delete/${id}`);
+          await axios.delete(`https://backend-school-d129ad763199.herokuapp.com/api/teachers/delete/${id}`);
           navigate('/');
         } catch (error) {
           console.error("Error deleting teacher:", error);

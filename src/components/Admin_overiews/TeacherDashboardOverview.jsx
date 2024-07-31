@@ -9,8 +9,8 @@ const TeacherDashboardOverview = () => {
     const fetchData = async () => {
       try {
         // Fetch class and subject counts
-        const classResponse = await axios.get('http://localhost:8080/api/teacher/classes/count');
-        const subjectResponse = await axios.get('http://localhost:8080/api/teacher/subjects/count');
+        const classResponse = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teacher/class/count');
+        const subjectResponse = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teacher/subjects/count');
 
         setNumClasses(classResponse.data.count);
         setNumSubjects(subjectResponse.data.count);

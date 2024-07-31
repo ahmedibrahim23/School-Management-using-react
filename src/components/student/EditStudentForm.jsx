@@ -29,7 +29,7 @@ function EditStudentForm() {
 
   const loadStudent = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/students/${id}`);
+      const response = await axios.get(`https://backend-school-d129ad763199.herokuapp.com/api/students/${id}`);
       setStudent(response.data);
     } catch (error) {
       console.error("Error fetching student", error);
@@ -39,7 +39,7 @@ function EditStudentForm() {
 
   const loadClasses = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/class');
+      const response = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/class');
       setStdClasses(response.data);
     } catch (error) {
       console.error("Error fetching classes", error);
@@ -59,7 +59,7 @@ function EditStudentForm() {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`http://localhost:8080/api/students/edit/${id}`, student);
+      await axios.put(`https://backend-school-d129ad763199.herokuapp.com/api/students/edit/${id}`, student);
       alert("Student updated successfully");
       navigate(`/stdDetails/${id}`);
     } catch (error) {

@@ -7,7 +7,7 @@ const FeeList = () => {
 
   useEffect(() => {
     // Fetch the list of fees from the backend
-    axios.get('http://localhost:8080/api/fees')
+    axios.get('https://backend-school-d129ad763199.herokuapp.com/api/fees')
       .then(response => {
         setFees(response.data);
       })
@@ -24,7 +24,7 @@ const FeeList = () => {
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm md:text-base transition duration-300"
             type="button"
           >
-            Add Subject
+            Add Fee
           </Link>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 rounded-md">

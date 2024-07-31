@@ -11,9 +11,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const studentResponse = await axios.get('http://localhost:8080/api/students/count');
-        const teacherResponse = await axios.get('http://localhost:8080/api/teachers/count');
-        const classResponse = await axios.get('http://localhost:8080/api/class/count');
+        const studentResponse = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/students/count');
+        const teacherResponse = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teachers/count');
+        const classResponse = await axios.get('https://backend-school-d129ad763199.herokuapp.com/class/count');
 
         setStudentCount(studentResponse.data);
         setTeacherCount(teacherResponse.data);

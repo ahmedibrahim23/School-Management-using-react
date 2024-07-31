@@ -20,7 +20,7 @@ const StudentForm = () => {
   });
   const [stdClasses,setstdClasses ] = useState([])
   useEffect(()=>{
-    axios.get("http://localhost:8080/api/class")
+    axios.get("https://backend-school-d129ad763199.herokuapp.com/api/class")
     .then(response => {
       console.log("API Response: ", response.data); // Log the entire response for debugging
       if (Array.isArray(response.data)) {
@@ -56,7 +56,7 @@ const StudentForm = () => {
   };
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("http://localhost:8080/api/students/new" ,student)
+    axios.post("https://backend-school-d129ad763199.herokuapp.com/api/students/new" ,student)
     .then(Response=>{
       navigate('/students');
     })

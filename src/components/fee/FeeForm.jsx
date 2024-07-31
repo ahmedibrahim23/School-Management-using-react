@@ -9,7 +9,7 @@ const FeeForm = () => {
 
   useEffect(() => {
     // Fetch the list of students from the backend
-    axios.get('http://localhost:8080/api/students')
+    axios.get('https://backend-school-d129ad763199.herokuapp.com/api/students')
       .then(response => {
         setStudents(response.data);
       })
