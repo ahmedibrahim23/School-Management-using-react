@@ -44,7 +44,7 @@ const ClassList = () => {
                       to="/admin-dashboard/classes/new"
                       className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
                     >
-                      Add subject
+                      Add Class
                     </Link>
                 </div>
                 <div className="overflow-x-auto">

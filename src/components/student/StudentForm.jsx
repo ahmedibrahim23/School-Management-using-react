@@ -58,7 +58,7 @@ const StudentForm = () => {
     e.preventDefault();
     axios.post("https://backend-school-d129ad763199.herokuapp.com/api/students/new" ,student)
     .then(Response=>{
-      navigate('/students');
+      navigate('/admin-dashboard/students');
     })
     .catch(error => {
       console.error("There was an error submitting the form!", error);

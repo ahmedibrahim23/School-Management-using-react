@@ -30,7 +30,7 @@ const ClassForm = () => {
             .then(response => {
                 console.log('Class created successfully:', response.data);
                 // Handle success (e.g., clear form, show success message, navigate to another page)
-                navigate('/classes'); // Assuming you have a route to show the list of classes
+                navigate('/admin-dashboard/classes'); // Assuming you have a route to show the list of classes
             })
             .catch(error => {
                 console.error('There was an error creating the class!', error);
