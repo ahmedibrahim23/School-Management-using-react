@@ -46,7 +46,7 @@ const GradeManagement = () => {
   );
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100'>
+    <div className='min-h-screen bg-gray-100'>
       <div className="p-4">
         <div className="bg-white p-4 rounded-md shadow-md">
           <h2 className="mb-4 text-xl font-bold text-gray-800">Grade Management</h2>
@@ -63,7 +63,7 @@ const GradeManagement = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Link to='/grades/new' 
+            <Link to='/teacher-dashboard/grades/new' 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
             >
               Add Grade

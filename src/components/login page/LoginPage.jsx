@@ -1,18 +1,39 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import image from '../../../public/pexels-olenkabohovyk-3646172.jpg';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('student');
+  const navigate = useNavigate(); // Hook to navigate programmatically
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log({ username, password, role });
+
+    try {
+      // Fetch teachers data from API
+      const response = await fetch("http://localhost:8080/api/teachers");
+      const teachers = await response.json();
+
+      // Check if the user is a teacher
+      const teacher = teachers.find(teacher => teacher.email === username && teacher.password === password);
+      
+      if (role === 'teacher' && teacher) {
+        // Redirect to Teacher Dashboard
+        navigate('/teacher-dashboard');
+      } else if (role === 'admin' && username === 'admin' && password === 'ADMIN@12354') {
+        navigate('/admin-dashboard');
+      } else {
+        alert('Invalid credentials or role.');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-800 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="bg-white shadow-lg flex flex-col md:flex-row w-full max-w-4xl rounded-lg overflow-hidden">
         {/* Left side: Image */}
         <div className="md:w-1/2 hidden md:block">
@@ -52,7 +73,7 @@ const LoginPage = () => {
                 onChange={(e) => setRole(e.target.value)}
                 className="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
               > 
-              <option value="">Select a role</option>  {/* Add more roles as needed */}                     
+                <option value="">Select a role</option>  {/* Add more roles as needed */}                     
                 <option value="student">Student</option>
                 <option value="teacher">Teacher</option>
                 <option value="admin">Admin</option>

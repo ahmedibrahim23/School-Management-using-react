@@ -26,7 +26,7 @@ const SubjectList = () => {
 
 
     return (
-        <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 w-full p-4'>
+        <div className='min-h-screen bg-gray-100 w-full p-4'>
             <div className="bg-white p-4 rounded-md shadow-md">
                 <h2 className="mb-4 text-xl font-bold text-gray-700">Subject List</h2>
                 <div className="mb-4 flex items-center">
@@ -41,7 +41,7 @@ const SubjectList = () => {
                         <FaSearch className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500" />
                     </div>
                     <Link
-                      to="/subjects/new"
+                      to="/admin-dashboard/subjects/new"
                       className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm transition duration-300"
                     >
                       Add subject

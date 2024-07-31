@@ -20,30 +20,32 @@ const TeacherSidebar = () => {
         </button>
       </div>
       <nav className="mt-8 space-y-10">
-        <Link to="/dashboard" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaChalkboardTeacher size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Dashboard</span>
-        </Link>
-        <Link to="/timetables" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaCalendarAlt size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Class Timetables</span>
-        </Link>
-        <Link to="/attendance" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaClipboardList size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Record Attendance</span>
-        </Link>
-        <Link to="/grades" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaGraduationCap size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Manage Grades</span>
-        </Link>
-        <Link to="/announcements" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaBullhorn size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Announcements</span>
-        </Link>
-        <Link to="/profiles" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
-          <FaUserFriends size={34} />
-          <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Teacher Profiles</span>
-        </Link>
+            <Link to="dashboard" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaChalkboardTeacher size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Dashboard</span>
+      </Link>
+      <Link to="timetables" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaCalendarAlt size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Class Timetables</span>
+      </Link>
+      <Link to="attendance" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaClipboardList size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Record Attendance</span>
+      </Link>
+      <Link to="grades" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaGraduationCap size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Manage Grades</span>
+      </Link>
+      <Link to="announcements" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaBullhorn size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Announcements</span>
+      </Link>
+      <Link to="profiles" className="flex items-center space-x-2 hover:bg-teal-600 p-3 rounded transition-colors duration-200">
+        <FaUserFriends size={34} />
+        <span className={`${isOpen ? 'inline' : 'hidden'} ml-2`}>Teacher Profiles</span>
+      </Link>
+
+
       </nav>
     </div>
   );
