@@ -9,7 +9,6 @@ import AttendanceForm from '../components/attendance/AttendanceForm';
 import ClassTimetable from '../components/classTable/ClassTimetable';
 import Announcements from '../components/announcements/Announcements ';
 import TeacherDashboardOverview from '../components/Admin_overiews/TeacherDashboardOverview';
-import NotFound from '../components/NotFound';
 
 
 const timetable = {
@@ -36,7 +35,6 @@ const TeacherDashboard = () => {
             <Route path="grades/:id" element={<EditGradeForm />} />
             <Route path="announcements" element={<Announcements />} />
             <Route path="profiles" element={<div>Teacher Profiles</div>} />
-            <Route path="*" element={<NotFound />} /> 
 
           </Routes>
         </div>

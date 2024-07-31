@@ -19,7 +19,6 @@ import FeeForm from '../components/fee/FeeForm';
 import FeeList from '../components/fee/FeeList';
 import AttendanceRecord from '../components/attendance/AttendanceRecord';
 import Dashboard from '../components/Admin_overiews/Dashboard';
-import NotFound from '../components/NotFound';
 
 const Admin = () => {
   return (
@@ -29,7 +28,7 @@ const Admin = () => {
         <Sidebar />
         <div className="flex-1 p-4 transition-all duration-300">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="/teachers" element={<TeacherList />} />
             <Route path="/teachers/new" element={<TeacherForm />} />
             <Route path="/teachers/:id" element={<TeacherDetails />} /> {/* Use :id for dynamic segments */}
@@ -48,7 +47,6 @@ const Admin = () => {
             <Route path="/fee/new" element={<FeeForm />} />
             <Route path="/reports" element={<div>Reports Component</div>} />
             <Route path="/logout" element={<div>Logout Component</div>} />
-            <Route path="*" element={<NotFound />} /> 
 
           </Routes>
         </div>
