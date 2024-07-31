@@ -24,7 +24,7 @@ const EditTeacherForm = () => {
 
   const loadTeacher = async () => {
     try {
-      const response = await axios.get(`https://backend-school-d129ad763199.herokuapp.com/api/teachers/${id}`);
+      const response = await axios.get(`https://backend-school-6fb386e3d920.herokuapp.com/api/teachers/${id}`);
       setTeacher(response.data);
     } catch (error) {
       console.error("Error fetching teacher:", error);
@@ -39,7 +39,7 @@ const EditTeacherForm = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`https://backend-school-d129ad763199.herokuapp.com/api/teachers/edit/${id}`, teacher);
+      await axios.put(`https://backend-school-6fb386e3d920.herokuapp.com/api/teachers/edit/${id}`, teacher);
       alert("Teacher updated successfully");
       navigate(`/details/${id}`);
     } catch (error) {

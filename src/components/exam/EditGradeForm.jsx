@@ -23,7 +23,7 @@ function EditGradeForm() {
 
   const loadStudents = async () => {
     try {
-      const response = await axios.get('https://backend-school-d129ad763199.herokuapp.com/api/students');
+      const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/students');
       setStudents(response.data);
     } catch (error) {
       console.error("Error fetching students:", error);
@@ -33,7 +33,7 @@ function EditGradeForm() {
 
   const loadSubjects = async () => {
     try {
-      const response = await axios.get('https://backend-school-cbcfe8928e29.herokuapp.com/api/subjects');
+      const response = await axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/subjects');
       setSubjects(response.data);
     } catch (error) {
       console.error("Error fetching subjects:", error);
@@ -43,7 +43,7 @@ function EditGradeForm() {
 
   const loadExam = async () => {
     try {
-      const response = await axios.get(`https://backend-school-cbcfe8928e29.herokuapp.com/api/exams/${id}`);
+      const response = await axios.get(`https://backend-school-6fb386e3d920.herokuapp.com/api/exams/${id}`);
       setGrade(response.data);
     } catch (error) {
       console.error("Error fetching exam:", error);
@@ -74,7 +74,7 @@ function EditGradeForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`https://backend-school-cbcfe8928e29.herokuapp.com/api/exams/edit/${id}`, grade);
+      await axios.put(`https://backend-school-6fb386e3d920.herokuapp.com/api/exams/edit/${id}`, grade);
       alert("Exam updated successfully");
       navigate("/grades");
     } catch (error) {

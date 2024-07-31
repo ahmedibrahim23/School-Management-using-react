@@ -7,7 +7,7 @@ const FeeList = () => {
 
   useEffect(() => {
     // Fetch the list of fees from the backend
-    axios.get('https://backend-school-d129ad763199.herokuapp.com/api/fees')
+    axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/fees')
       .then(response => {
         setFees(response.data);
       })

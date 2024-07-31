@@ -19,7 +19,7 @@ const TeacherList = () => {
 
   const loadTeachers = async () => {
     try {
-      const response = await axios.get("https://backend-school-d129ad763199.herokuapp.com/api/teachers");
+      const response = await axios.get("https://backend-school-6fb386e3d920.herokuapp.com/api/teachers");
       setTeachers(response.data);
       setFilteredTeachers(response.data);
     } catch (error) {
