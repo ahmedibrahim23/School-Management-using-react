@@ -60,7 +60,7 @@ const SubjectList = () => {
                             {subjects.map((subject, index) => (
                                 <tr key={index} className="text-sm font-normal border-t hover:bg-gray-100">
                                     <td className="py-2 px-4 border-b text-xs sm:text-sm">{subject.id}</td>
-                                    <td className="py-2 px-4 border-b text-xs sm:text-sm">{subject.name}</td>
+                                    <td className="py-2 px-4 border-b text-xs sm:text-sm">{subject.subjectName}</td>
                                     <td className="py-2 px-4 border-b text-xs sm:text-sm">
                                         {subject.teacherName ? subject.teacherName : 'No teacher assigned'}
                                     </td>
