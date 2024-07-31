@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from '../../../public/pexels-olenkabohovyk-3646172.jpg';
-import axios from 'axios';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student');
+  const [role, setRole] = useState('');
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleLogin = async (e) => {
@@ -14,11 +13,11 @@ const LoginPage = () => {
 
     try {
       // Fetch teachers data from API
-      const response = await axios.get ("https://backend-school-cbcfe8928e29.herokuapp.com/api/teachers");
+      const response = await fetch("http://localhost:8080/api/teachers");
       const teachers = await response.json();
 
       // Check if the user is a teacher
-      const teacher = teachers.find(teacher => teacher.email === username && teacher.address === password);
+      const teacher = teachers.find(teacher => teacher.email === username && teacher.password === password);
       
       if (role === 'teacher' && teacher) {
         // Redirect to Teacher Dashboard
@@ -75,10 +74,10 @@ const LoginPage = () => {
                 onChange={(e) => setRole(e.target.value)}
                 className="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
               > 
-                <option value="">Select a role</option>  {/* Add more roles as needed */}                     
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-                <option value="admin">admin</option>
+                <option value="" disabled>Select Role</option>
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
               </select>
             </div>
             <div className="flex justify-center">
