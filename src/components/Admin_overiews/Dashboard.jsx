@@ -13,7 +13,7 @@ const Dashboard = () => {
       try {
         const studentResponse = await axios.get('http://localhost:8080/api/students/count');
         const teacherResponse = await axios.get('http://localhost:8080/api/teachers/count');
-        const classResponse = await axios.get('http://localhost:8080/api/classes/count');
+        const classResponse = await axios.get('http://localhost:8080/api/class/count');
 
         setStudentCount(studentResponse.data);
         setTeacherCount(teacherResponse.data);

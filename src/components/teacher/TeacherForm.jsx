@@ -27,7 +27,7 @@ const TeacherForm = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/teachers/new", teacher);
+      await axios.post("https://backend-school-cbcfe8928e29.herokuapp.com/api/teachers/new", teacher);
       alert("Teacher added successfully");
       navigate('/');
     } catch (error) {
