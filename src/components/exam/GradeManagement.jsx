@@ -15,7 +15,7 @@ const GradeManagement = () => {
   const loadExams = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:8080/api/exams");
+      const response = await axios.get("https://backend-school-cbcfe8928e29.herokuapp.com/api/exams");
       setGrades(response.data);
       setError(null); // Clear previous errors if successful
     } catch (error) {

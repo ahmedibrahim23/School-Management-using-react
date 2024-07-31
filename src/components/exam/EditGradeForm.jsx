@@ -23,7 +23,7 @@ function EditGradeForm() {
 
   const loadStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/students');
+      const response = await axios.get('https://backend-school-cbcfe8928e29.herokuapp.com/api/students');
       setStudents(response.data);
     } catch (error) {
       console.error("Error fetching students:", error);
@@ -33,7 +33,7 @@ function EditGradeForm() {
 
   const loadSubjects = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/subjects');
+      const response = await axios.get('https://backend-school-cbcfe8928e29.herokuapp.com/api/subjects');
       setSubjects(response.data);
     } catch (error) {
       console.error("Error fetching subjects:", error);
@@ -43,7 +43,7 @@ function EditGradeForm() {
 
   const loadExam = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/exams/${id}`);
+      const response = await axios.get(`https://backend-school-cbcfe8928e29.herokuapp.com/api/exams/${id}`);
       setGrade(response.data);
     } catch (error) {
       console.error("Error fetching exam:", error);
