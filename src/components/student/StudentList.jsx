@@ -19,7 +19,7 @@ const StudentList = () => {
 
   const loadStudents = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/students");
+      const response = await axios.get("https://backend-school-cbcfe8928e29.herokuapp.com/api/students");
       setStudents(response.data);
       setFilteredStudents(response.data);
     } catch (error) {

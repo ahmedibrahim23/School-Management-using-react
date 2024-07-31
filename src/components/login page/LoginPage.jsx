@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import image from '../../../public/pexels-olenkabohovyk-3646172.jpg';
+import axios from 'axios';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -13,11 +14,11 @@ const LoginPage = () => {
 
     try {
       // Fetch teachers data from API
-      const response = await fetch("https://backend-school-cbcfe8928e29.herokuapp.com/api/teachers");
+      const response = await axios.get ("https://backend-school-cbcfe8928e29.herokuapp.com/api/teachers");
       const teachers = await response.json();
 
       // Check if the user is a teacher
-      const teacher = teachers.find(teacher => teacher.email === username && teacher.password === password);
+      const teacher = teachers.find(teacher => teacher.email === username && teacher.address === password);
       
       if (role === 'teacher' && teacher) {
         // Redirect to Teacher Dashboard
@@ -76,7 +77,7 @@ const LoginPage = () => {
                 <option value="">Select a role</option>  {/* Add more roles as needed */}                     
                 <option value="student">Student</option>
                 <option value="teacher">Teacher</option>
-                <option value="admin">Admin</option>
+                <option value="admin">admin</option>
               </select>
             </div>
             <div className="flex justify-center">
