@@ -26,7 +26,6 @@ const ClassForm = () => {
             name: className,
             teacherId: selectedTeacher
         };
-
         axios.post('https://backend-school-d129ad763199.herokuapp.com/api/class/new', newClass)
             .then(response => {
                 console.log('Class created successfully:', response.data);

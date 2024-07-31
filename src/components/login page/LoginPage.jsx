@@ -5,7 +5,7 @@ import image from '../../../public/pexels-olenkabohovyk-3646172.jpg';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student');
+  const [role, setRole] = useState('');
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleLogin = async (e) => {
@@ -25,6 +25,7 @@ const LoginPage = () => {
       } else if (role === 'admin' && username === 'admin' && password === 'ADMIN@12354') {
         navigate('/admin-dashboard');
       } else {
+        
         alert('Invalid credentials or role.');
       }
     } catch (error) {
@@ -73,10 +74,10 @@ const LoginPage = () => {
                 onChange={(e) => setRole(e.target.value)}
                 className="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
               > 
-                <option value="">Select a role</option>  {/* Add more roles as needed */}                     
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-                <option value="admin">Admin</option>
+                <option value="" disabled>Select Role</option>
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
               </select>
             </div>
             <div className="flex justify-center">
