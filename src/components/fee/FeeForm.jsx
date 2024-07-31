@@ -27,7 +27,7 @@ const FeeForm = () => {
       status
     };
 
-    axios.post('http://localhost:8080/api/fees/new', null, { params: feeData })
+    axios.post('https://backend-school-cbcfe8928e29.herokuapp.com/api/fees/new', null, { params: feeData })
       .then(response => {
         console.log('Fee created successfully:', response.data);
         // Reset form fields
@@ -41,41 +41,6 @@ const FeeForm = () => {
   };
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <div>
-    //     <label>Student:</label>
-    //     <select
-    //       value={studentId}
-    //       onChange={(e) => setStudentId(e.target.value)}
-    //       required
-    //     >
-    //       <option value="">Select a student</option>
-    //       {students.map(student => (
-    //         <option key={student.id} value={student.id}>
-    //           {student.name}
-    //         </option>
-    //       ))}
-    //     </select>
-    //   </div>
-    //   <div>
-    //     <label>Amount:</label>
-    //     <input
-    //       type="number"
-    //       value={amount}
-    //       onChange={(e) => setAmount(e.target.value)}
-    //       required
-    //     />
-    //   </div>
-    //   <div>
-    //     <label>Status:</label>
-    //     <input
-    //       type="checkbox"
-    //       checked={status}
-    //       onChange={(e) => setStatus(e.target.checked)}
-    //     />
-    //   </div>
-    //   <button type="submit">Submit</button>
-    // </form>
     <div className="min-h-screen bg-gray-100 w-full p-4">
     <div className="bg-white p-4 rounded-md shadow-md">
       <h2 className="mb-4 text-xl font-bold text-gray-700">Create Fee</h2>
