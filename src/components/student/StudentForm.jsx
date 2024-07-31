@@ -65,7 +65,7 @@ const StudentForm = () => {
     });
   };
   return(
-  <div className="min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 flex justify-center items-center w-full p-4">
+  <div className="min-h-screen bg-gray-100 flex justify-center items-center w-full p-4">
   <form className="bg-white p-6 rounded-xl shadow-md max-w-4xl w-full overflow-hidden" onSubmit={handleSubmit}>
     <h1 className="text-center text-2xl font-semibold text-gray-800 mb-6">Student Registration</h1>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -17,10 +17,10 @@ const FeeList = () => {
   }, []);
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 w-full p-4'>
+    <div className='min-h-screen bg-gray-100 w-full p-4'>
       <div className="bg-white p-4 rounded-md shadow-md">
         <h2 className="mb-4 text-xl font-bold text-gray-700">Fee List</h2>
-        <Link to='/fee/new'
+        <Link to='/admin-dashboard/fee/new'
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md text-sm md:text-base transition duration-300"
             type="button"
           >

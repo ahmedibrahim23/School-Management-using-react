@@ -243,7 +243,7 @@ function AttendanceForm() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 w-full p-4'>
+    <div className='min-h-screen bg-gray-100 w-full p-4'>
     <div className="bg-white p-4 rounded-md shadow-md">
       <h2 className="mb-4 text-xl font-bold text-gray-700">Mark Attendance</h2>
       <div className="mb-4">

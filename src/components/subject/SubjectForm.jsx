@@ -38,7 +38,7 @@ const SubjectForm = () => {
           });
   };
   return (
-    <div class="h-screen bg-gradient-to-br from-gray-600 to-indigo-100 flex justify-center items-center w-full">
+    <div class="h-screen bg-gray-100 flex justify-center items-center w-full">
   <form onSubmit={handleSubmit} >
     <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-lg">
       <div class="space-y-4">

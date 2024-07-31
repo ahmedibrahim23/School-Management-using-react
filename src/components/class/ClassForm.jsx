@@ -39,7 +39,7 @@ const ClassForm = () => {
     };
 
     return (
-        <div className="h-screen bg-gradient-to-br from-gray-600 to-indigo-100 flex justify-center items-center w-full">
+        <div className="h-screen bg-gray-100 flex justify-center items-center w-full">
             <form onSubmit={handleSubmit} className="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-lg">
                 <div className="space-y-4">
                     <h1 className="text-center text-2xl font-semibold text-gray-600">Class Registration</h1>

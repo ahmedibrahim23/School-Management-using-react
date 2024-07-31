@@ -37,7 +37,7 @@ const TeacherDetils = () => {
     };
   
     return (
-      <div className='min-h-screen bg-gradient-to-br from-gray-600 to-indigo-100 p-4'>
+      <div className='min-h-screen bg-gray-100 p-4'>
         <div className="bg-white p-6 rounded-md shadow-md max-w-4xl mx-auto">
           {error && <div className="alert alert-danger">{error}</div>}
           {teacher ? (
@@ -83,7 +83,7 @@ const TeacherDetils = () => {
               </div>
               <div className="mt-4 flex space-x-2">
                 <Link
-                  to={`/editteacher/${id}`}
+                  to={`/admin-dashboard/teachers/edit/${id}`}
                   className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md text-sm transition duration-300"
                 >
                   Edit
