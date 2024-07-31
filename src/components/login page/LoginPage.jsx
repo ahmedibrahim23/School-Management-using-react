@@ -25,6 +25,7 @@ const LoginPage = () => {
       } else if (role === 'admin' && username === 'admin' && password === 'ADMIN@12354') {
         navigate('/admin-dashboard');
       } else {
+        
         alert('Invalid credentials or role.');
       }
     } catch (error) {
