@@ -19,19 +19,12 @@ Admin Dashboard
 •	Manage Exams
 •	Manage Attendance
 •	Manage Subjects
-•	View Reports
 Teacher Dashboard
 •	Manage Attendance
 •	Enter Marks
 •	View Class Schedule
 •	Communicate with Admin
 •	Monitor Student Performance
-Student Dashboard
-•	View Attendance
-•	View Marks
-•	View Schedule
-•	Pay Fees
-•	Communicate with Teachers
 Technologies Used
 Frontend
 •	React
@@ -42,8 +35,14 @@ Backend
 •	Spring Data JPA
 •	PostgreSQL
 •	Hibernate
+
+shaqoyinka an noqabsomin
+1.spring security sababta(lama qadan chapter oo an rajenena inan mesha kubaran dono)
+2. vercel deployment wan ka gari weyne cilad laxarirto crossOrigin oo nagu so baxday xili danbe
+3.student portal asna backend error ah banagahaysta 
+wan si wadi dona project markay qimaynta ku dhamato i.a
 Deployment
-•	Frontend: Deployed on Vercel
+•	Frontend: github page
 •	Backend: Deployed on Heroku
 Getting Started
 The application is live and accessible at the following URLs:
