@@ -15,7 +15,7 @@ const GradeManagement = () => {
   const loadExams = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://backend-school-d129ad763199.herokuapp.com/api/exams");
+      const response = await axios.get("https://backend-school-6fb386e3d920.herokuapp.com/api/exams");
       setGrades(response.data);
       setError(null); // Clear previous errors if successful
     } catch (error) {
@@ -30,7 +30,7 @@ const GradeManagement = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this exam?");
     if (confirmDelete) {
       try {
-        await axios.delete(`https://backend-school-d129ad763199.herokuapp.com/api/exams/delete/${id}`);
+        await axios.delete(`https://backend-school-6fb386e3d920.herokuapp.com/api/exams/delete/${id}`);
         setGrades(grades.filter(grade => grade.id !== id));
         setError(null); // Clear previous errors if successful
       } catch (error) {

@@ -13,7 +13,7 @@ const LoginPage = () => {
 
     try {
       // Fetch teachers data from API
-      const response = await fetch("https://backend-school-d129ad763199.herokuapp.com/api/teachers");
+      const response = await fetch("https://backend-school-6fb386e3d920.herokuapp.com/api/teachers");
       const teachers = await response.json();
 
       // Check if the user is a teacher

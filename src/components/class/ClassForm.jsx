@@ -10,7 +10,7 @@ const ClassForm = () => {
 
     useEffect(() => {
         // Fetch teachers from the backend
-        axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teachers')
+        axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/teachers')
             .then(response => {
                 setTeachers(response.data);
             })
@@ -26,7 +26,7 @@ const ClassForm = () => {
             name: className,
             teacherId: selectedTeacher
         };
-        axios.post('https://backend-school-d129ad763199.herokuapp.com/api/class/new', newClass)
+        axios.post('https://backend-school-6fb386e3d920.herokuapp.com/api/class/new', newClass)
             .then(response => {
                 console.log('Class created successfully:', response.data);
                 // Handle success (e.g., clear form, show success message, navigate to another page)

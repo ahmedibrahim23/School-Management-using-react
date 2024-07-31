@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 const SubjectForm = () => {
   const [teachers, setTeachers] = useState([]);
-  const [subjectName, setSubjectName] = useState('');
+  const [name, setname] = useState('');
   const [selectedTeacher, setSelectedTeacher] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
       // Fetch teachers from the backend
-      axios.get('https://backend-school-d129ad763199.herokuapp.com/api/teachers')
+      axios.get('https://backend-school-6fb386e3d920.herokuapp.com/api/teachers')
           .then(response => {
               setTeachers(response.data);
           })
@@ -23,11 +23,11 @@ const SubjectForm = () => {
       event.preventDefault();
 
       const newSubject = {
-          name: subjectName,
+          name: name,
           teacherId: selectedTeacher
       };
 
-      axios.post('https://backend-school-d129ad763199.herokuapp.com/api/subjects/new', newSubject)
+      axios.post('https://backend-school-6fb386e3d920.herokuapp.com/api/subjects/new', newSubject)
           .then(response => {
               console.log('Subject created successfully:', response.data);
               // Handle success (e.g., clear form, show success message, navigate to another page)
@@ -48,8 +48,8 @@ const SubjectForm = () => {
           <input
               type="text"
               id="className"
-              value={subjectName}
-              onChange={(e) => setSubjectName(e.target.value)}
+              value={name}
+              onChange={(e) => setname(e.target.value)}
               placeholder="subject Name"
               className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
           />
